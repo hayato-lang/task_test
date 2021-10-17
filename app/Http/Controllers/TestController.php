@@ -13,7 +13,13 @@ class TestController extends Controller
     {
         $values = Test::all();
 
-        // dd($values);
+        $collection = collect([1,2,3,4,5,6,7]);
+
+        $chunks = $collection->chunk(4);
+
+        $chunks->toArray();
+
+        dd($chunks);
 
         return view('tests.test', compact('values'));
     }
